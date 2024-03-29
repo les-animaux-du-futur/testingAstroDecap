@@ -9,15 +9,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <section class="container">
 
             <!-- Première partie "Le projet" -->
+            <h1>LE PROJET</h1>
             <div class="container_project">
                 <div class="text2">
-                    <h2>Le projet</h2>
-                    <p>Les animaux du futur est un projet vivant et collaboratif, visant à instruire et sensibiliser
-                       les jeunes sur les espèces animales actuelles et futures.</p>
-                    <p>L’objectif de ce projet est la création d’un univers transmédia, physique et digital, mais
-                       aussi une restitution à travers une installation dynamique et interactive de muséographie.</p>
-                    <p>Il a comme ambition de vibrer sous les yeux des jeunes générations, d’inciter les élèves de collège,
-                       primaire et de lycée à imaginer la richesse d’un monde futur.</p>
+                    <div>
+                        <h2>L’objectif</h2>
+                        <p>Les animaux du futur est un projet vivant et collaboratif, visant à instruire et sensibiliser
+                            les jeunes sur les espèces animales actuelles et futures.</p>
+                        <p>L’objectif de ce projet est la création d’un univers transmédia, physique et digital, mais
+                            aussi une restitution à travers une installation dynamique et interactive de muséographie.</p>
+                        <p>Il a comme ambition de vibrer sous les yeux des jeunes générations, d’inciter les élèves de collège,
+                            primaire et de lycée à imaginer la richesse d’un monde futur.</p>
+                    </div>
+                    <div class="button">
+                        <a class="a_button" href="">
+                            <button>Les coulisses 
+                                    <img src="../../public/assets/blog/arrow.svg" alt="flèche">
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 <img class="img_atelier" src="../../public/assets/blog/img_atelier.webp" alt="">
             </div>
@@ -65,7 +75,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     //configuration du container
     .container{
-
+        h1{
+            display: flex;
+            justify-content: center;
+        }
         //div project
         .container_project{
             width: 100%;
@@ -73,6 +86,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             .img_atelier{
                 width: 100%;
             }
+            button{
+            width: 150px;
+            height: 53px;
+            border-radius: 8px;
+            background: #3AE7AB;
+            border: none;
+            font-weight: 700;
+            margin-bottom: 32px;
+            transition: 0.2s;
+            transition: transform 0.3s ease;
+            &:hover{
+                transition: 0.2s;
+                background: #124835;
+                color: #E1F6FF;
+                filter: brightness(100%);
+                transform: scale(1.05);
+            }
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 25px;
+
+            }
+        }
         }
         //div module
         .container_module{
@@ -194,6 +233,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             .img_atelier{
                 width: 400px !important;
                 height: 100%;
+            }
+            .button{
+                display: flex;
+                justify-content: flex-start !important;
             }
         }
     }
