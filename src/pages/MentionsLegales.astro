@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+
+---
+
+<BaseLayout>
+    <section>
+        <h1>Mentions Légales</h1>
+        <div class="container">
+            <div class="text1">
+                <h3>À dater du 28/03/2024</h3>
+                <p>Directeur de le publication : Benoît ZEBRA<br>
+                    Adresse : [À renseigner]<br>
+                    Adresse e-mail : [À renseigner]<br>
+                    Numéro de téléphone : [À renseigner]<br>
+                    Hébergement : [À renseigner]<br>
+                    Conception<br>
+                    Création : Les Animaux du Futur<br>
+                    Crédits conception : À DÉFINIR<br>
+                    Les À DÉFINIR composé de :<br>
+                    Louis LASSERRE<br>
+                    Maxime LUST<br>
+                    Natacha TWYFFELS<br>
+                    Tristan REBEYROL<br>
+                    Chloé FAYE<br>
+                    Antoine CORBERAND<br>
+                    Alexis JUHEL<br>
+                    Edgar QUÉMÉRÉ</p>
+            </div>
+            <div class="text2">
+                <h3>Navigation & Sécurité</h3>
+                <p>L’utilisateur, en poursuivant sa navigation sur le site, accepte les conditions générales d’utilisation.<br>
+                    Le site ne peut pas être tenu pour responsable des dommages matériels ou technique qui 
+                    pourraient survenir lors de la navigation sur le site.</p>
+                <h3>Propriété intellectuelle</h3>
+                <p>Tous les contenus présents sur le site sont la propriété de Benoît ZEBA et de l'IUT Bordeaux Montaigne 
+                    (photographies, logos, illustrations et sons), et bénéficient de la protection accordée par la législation 
+                    en vigueur en matière de propriété intellectuelle.<br>
+                    Chaque auteur respectif est en droit de réutiliser leurs créations pour d’autres projets non commerciaux: 
+                    Toute reproduction ou utilisation est strictement interdite sans accord au préalable de l'éditeur.<br>
+                    La reproduction et la copie des contenus par l'utilisateur requièrent une autorisation préalable du site. 
+                    Dans ce cas, toute utilisation à des usages commerciaux ou à des fins publicitaires est proscrite.</p>
+            </div>
+            <div class="text3">
+                <h3>Formulaire de contact & données personnelles</h3>
+                <p>Nous conservons les informations personnelles fournies par les visiteurs via le formulaire de contact 
+                    afin de faciliter les échanges avec ceux qui le souhaitent.<br>
+                    Ces données sont sécurisées et conservées pendant une période de 2 ans à partir de la dernière interaction 
+                    avec notre équipe.<br>
+                    Conformément au RGPD du 25 mai 2018, tous les utilisateurs ont le droit de demander l’accès,  
+                    la modification ou la suppression de leurs informations personnelles à tout moment en contactant 
+                    notre délégué à la protection des données (DPO). adresse: [à renseigner]
+                    </p>
+            </div>
+            <div class="text4">
+                <h3>Contenus externes</h3>
+                <p>Les articles de ce site peuvent contenir des contenus intégrés (images, vidéos, articles, etc.) 
+                    Ces contenus intégrés fonctionnent de la même manière que si le visiteur se rendait directement sur 
+                    le site d'origine.<br>
+                    Il est à noter que ces sites tiers peuvent collecter des données vous concernant, utiliser des cookies, 
+                    incorporer des outils de suivi tiers, et suivre vos interactions avec ces contenus intégrés si vous êtes 
+                    connecté à votre compte sur leur plateforme.<br>
+                    Le site n’est pas responsable des données et contenus intégrés.</p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style lang="scss">
+    body{
+        margin: 50px 30px;
+        section{
+            h1{
+                display: flex;
+                justify-content: center;
+            }
+            .container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: start;
+                gap: 20px;
+            }
+            .text1{
+                width: 487px;
+            }
+            .text2{
+                width: 650px;
+            }
+            .text3{
+                width: 487px;
+            }
+            .text4{
+                width: 630px;
+            }
+        }
+    }
+</style>
