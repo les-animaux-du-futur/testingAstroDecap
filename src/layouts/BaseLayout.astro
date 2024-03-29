@@ -1,4 +1,5 @@
 ---
+import BlogHeader from '../components/BlogHeader.astro';
 import { SITE } from '../config';
 import '../styles/app.css';
 
@@ -13,6 +14,7 @@ import '../styles/app.css';
     </head>
 
     <body>
+      <BlogHeader/>
         <slot/>
     </body>
 <footer>
