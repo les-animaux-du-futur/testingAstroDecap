@@ -1,0 +1,11 @@
+{
+  "biome": "forest",
+  "height": "1,5 m",
+  "name": "TIGRE FEUILLU",
+  "EvolutionDescripption": "Évolution du tigre actuel, plus musclée. Sa peau est devenue plus dure, sa fourrure a tourné au vert, ses dents ont poussé et rappellent celles de son ancêtre lointain, le Smilodon. Elles sont emplies d’un venin mortel.",
+  "weight": " 500 kg",
+  "type": "animal",
+  "life": "20 ans",
+  "discoveryDate": "29 Mar 2024",
+  "speciesImage": "/assets/blog/tigre.webp"
+}

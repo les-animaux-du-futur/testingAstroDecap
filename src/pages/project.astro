@@ -35,20 +35,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                        et récréative.</p>
                 </div>
                 <div class="card_module">
-                    <a href="#">
+                    <a href="/modules/petit_explorateur">
                     <div class="card1">
                             <h2 class="first_h2">Petit</h2>
                             <h2 class="second_h2">Explorateur</h2>
                             <h3>De 6 a 11ans</h3>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="/modules/explorateur">
                     <div class="card2">
                             <h2 class="h2_card2">Explorateur</h2>
                             <h3>De 12 a 15ans</h3>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="/modules/grand_explorateur">
                     <div class="card3">
                             <h2 class="first_h2">Grand</h2>
                             <h2 class="second_h2">Explorateur</h2>
@@ -92,29 +92,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 height: 400px;
                 background-image: url('../../assets/blog/img_petit_explorateur.webp');
                 background-size: cover;
+
                 filter: brightness(60%);
                 transition: 0.2s;
                 transition: transform 0.3s ease;
                 &:hover{
-                    transition: 0.2s;
-                    filter: brightness(100%);
-                    transform: scale(1.05);
+                  transition: 0.2s;
+                  filter: brightness(100%);
+                  transform: scale(1.05);
                 }
                 h2{
-                    margin: -2px;
-                    margin-left: 50px;
-                    color: #000;
+                  margin: -2px;
+                  margin-left: 50px;
+                  color: #E1F6FF;
                 }
                 .first_h2{
-                    display: flex;
-                    padding-top: 260px;
+                  display: flex;
+                  padding-top: 260px;
                 }
                 h3{
-                    display: flex;
-                    justify-content: flex-end;
-                    margin: 0;
-                    margin-right: 16px;
-                    color: #000;
+                  display: flex;
+                  justify-content: flex-end;
+                  margin: 0;
+                  margin-right: 16px;
+                  color: #E1F6FF;
                 }
             }
             //deuxième carte des 3 modules différents
@@ -178,7 +179,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
         .text{
             line-height: 130%;
-        }  
+        }
         .text2{
             line-height: 130%;
         }

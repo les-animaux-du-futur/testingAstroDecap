@@ -26,7 +26,6 @@ export default defineConfig({
             create: true,
             delete: true,
             identifier_field: "name",
-            slug: "species",
             fields: [
               { name: "name", widget: "string", label: "Nom" },
               {
@@ -60,20 +59,23 @@ export default defineConfig({
                 options: [
                   { label: "désert", value: "desert" },
                   { label: "Forêt", value: "forest" },
+                  { label: "Montagne", value: "montagne" },
+                  { label: "Océan", value: "ocean" },
+                  { label: "Tropical", value: "tropical" },
                 ],
               },
               {
                 name: "height",
-                widget: "number",
-                value_type: "float",
-                label: "Taille(m)",
+                widget: "string",
+                value_type: "string",
+                label: "Taille",
                 required: true,
               },
               {
                 name: "weight",
-                widget: "number",
-                value_type: "float",
-                label: "poids(m)",
+                widget: "string",
+                value_type: "string",
+                label: "poids",
                 required: false,
               },
               {

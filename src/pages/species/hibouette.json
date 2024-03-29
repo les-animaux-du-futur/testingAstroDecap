@@ -1,0 +1,11 @@
+{
+  "biome": "forest",
+  "height": "78 cm",
+  "name": "HIBOUETTE",
+  "EvolutionDescripption": "Mignon rapace nocturne très sociable, il vit principalement dans la forêt. Ses plumes sont similaires à des écailles, lui procurant une armure contre les prédateurs ou les chocs violents.",
+  "weight": "20 kg",
+  "type": "animal",
+  "life": "20 ans",
+  "discoveryDate": "29 Mar 2024",
+  "speciesImage": "/assets/blog/chouette.webp"
+}
