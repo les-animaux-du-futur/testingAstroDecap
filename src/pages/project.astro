@@ -10,7 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
             <!-- Première partie "Le projet" -->
             <div class="container_project">
-                <div class="text">
+                <div class="text2">
                     <h2>Le projet</h2>
                     <p>Les animaux du futur est un projet vivant et collaboratif, visant à instruire et sensibiliser
                        les jeunes sur les espèces animales actuelles et futures.</p>
@@ -178,14 +178,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
         .text{
             line-height: 130%;
+        }  
+        .text2{
+            line-height: 130%;
         }
     }
     @media screen and (min-width: 768px){
         .container_project{
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 46px;
             .img_atelier{
-                width: 400px;
+                width: 400px !important;
+                height: 100%;
             }
         }
     }
