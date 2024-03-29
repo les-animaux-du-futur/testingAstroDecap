@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "BlackHan";
+  src: url("/fonts/BlackHan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/DMSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
