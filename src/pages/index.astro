@@ -165,9 +165,7 @@ speciesFolder.map((fileName) => {
 			<aside>
 				<Drawer id="desert" data={biomes['desert']}/>
 			</aside>
-			<footer>
-			<a href="/admin">Admin Dashboard 🔐</a>
-			</footer>
+
 		</div>
 	</body>
 </html>
@@ -195,3 +193,20 @@ speciesFolder.map((fileName) => {
         }
     });
 </script>
+
+<style>
+
+  svg {
+    width: fit-content;
+    height: fit-content;
+    max-width: 90%;
+  }
+  main {
+    max-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+
+</style>
