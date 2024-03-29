@@ -22,15 +22,27 @@ let permalink = 'https://example.com/';
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 
-let species = {}
+let biomes = {}
 
 const speciesFolder = readdirSync('src/pages/species');
 
 speciesFolder.map((fileName) => {
   const data = readFileSync(`src/pages/species/${fileName}`, {encoding: 'utf-8'});
   const jsData = JSON.parse(data)
-  species[jsData.name] = jsData
+
+  const biomeName = jsData.biome
+
+  if (jsData[biomeName]) {
+    biomes[biomeName].push(jsData)
+  }else {
+    biomes[biomeName] = [jsData]
+  }
+
+
 })
+
+
+
 
 ---
 

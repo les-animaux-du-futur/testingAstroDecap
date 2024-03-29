@@ -1,0 +1,39 @@
+---
+
+interface Props {
+  title: string
+  sideText: string
+}
+
+const {
+  title,
+  sideText
+} = Astro.props
+---
+
+
+<div class="title">
+  <h1 class="container">{title}</h1>
+  <h3 class="sideText">{sideText}</h3>
+</div>
+
+
+<style lang="scss">
+
+  .title {
+    margin: 0 auto;
+    width: fit-content;
+    font-family: BlackHan;
+    h1 {
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .sideText {
+      margin: 0;
+      margin-left: auto;
+      width: fit-content;
+
+    }
+  }
+</style>

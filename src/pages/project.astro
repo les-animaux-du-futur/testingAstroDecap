@@ -7,16 +7,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
         <!-- container de la partie projet et de la partie des modules -->
         <section class="container">
-            
+
             <!-- Première partie "Le projet" -->
             <div class="container_project">
                 <div class="text2">
                     <h2>Le projet</h2>
-                    <p>Les animaux du futur est un projet vivant et collaboratif, visant à instruire et sensibiliser 
+                    <p>Les animaux du futur est un projet vivant et collaboratif, visant à instruire et sensibiliser
                        les jeunes sur les espèces animales actuelles et futures.</p>
-                    <p>L’objectif de ce projet est la création d’un univers transmédia, physique et digital, mais 
+                    <p>L’objectif de ce projet est la création d’un univers transmédia, physique et digital, mais
                        aussi une restitution à travers une installation dynamique et interactive de muséographie.</p>
-                    <p>Il a comme ambition de vibrer sous les yeux des jeunes générations, d’inciter les élèves de collège, 
+                    <p>Il a comme ambition de vibrer sous les yeux des jeunes générations, d’inciter les élèves de collège,
                        primaire et de lycée à imaginer la richesse d’un monde futur.</p>
                 </div>
                 <img class="img_atelier" src="../../public/assets/blog/img_atelier.webp" alt="">
@@ -27,11 +27,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <!--la div du texte pour les modules utilise la même class que le texte du texte projet -->
                 <div class="text">
                     <h2>Les modules</h2>
-                    <p>Trois modules sont présents à la découverte, chacun s’articulant autour de la sensibilisation 
-                       sur les enjeux du climat ainsi que sur les espèces en voie de disparition tout en s’adaptant 
-                       à chacun des niveaux scolaires : primaire, collège et secondaire. Ces modules sont formés de 
-                       trois parties : la recherche, la création, et la valorisation. Cela permet de faire réaliser 
-                       les enfants aux enjeux climatiques, tout en stimulant leur imagination de façon pédagogique 
+                    <p>Trois modules sont présents à la découverte, chacun s’articulant autour de la sensibilisation
+                       sur les enjeux du climat ainsi que sur les espèces en voie de disparition tout en s’adaptant
+                       à chacun des niveaux scolaires : primaire, collège et secondaire. Ces modules sont formés de
+                       trois parties : la recherche, la création, et la valorisation. Cela permet de faire réaliser
+                       les enfants aux enjeux climatiques, tout en stimulant leur imagination de façon pédagogique
                        et récréative.</p>
                 </div>
                 <div class="card_module">
@@ -62,38 +62,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style lang="scss">
-    body{
-        background: #131515;
-    }
+
     //configuration du container
     .container{
-        margin: 50px 30px;
 
-        h1{
-            font-size: 48px;
-            font-weight: 500;
-            color: #E1F6FF;
-        }
-        h2{
-            font-size: 35px;
-            font-weight: 500;
-            color: #E1F6FF;
-        }
-        h3{
-            font-size: 25px;
-            font-weight: 500;
-            color: #E1F6FF;
-        }
-        p{
-            font-size: 14px;
-            font-weight: 400;
-            color: #E1F6FF;
-        }
-        a{
-            font-size: 14px;
-            font-weight: 700;
-            color: #E1F6FF;
-        }
         //div project
         .container_project{
             width: 100%;
@@ -206,11 +178,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
         .text{
             line-height: 130%;
-        }
+        }  
         .text2{
             line-height: 130%;
         }
-    }  
+    }
     @media screen and (min-width: 768px){
         .container_project{
             display: flex;
