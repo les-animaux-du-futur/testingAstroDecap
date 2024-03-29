@@ -1,0 +1,31 @@
+---
+export interface Props {
+    id: string;
+    data: any;
+}
+
+const {id, data} = Astro.props;
+console.log(data);
+---
+
+<div class="data-container" id={id}>
+
+    {data.map((specie) => (
+        <div class="title">
+            {specie.name}
+        </div>
+        <div class="type">
+            {specie.type}
+        </div>
+        <img src={specie.speciesImage} alt=""/>
+    ))}
+</div>
+
+<style lang="scss">
+    .data-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
