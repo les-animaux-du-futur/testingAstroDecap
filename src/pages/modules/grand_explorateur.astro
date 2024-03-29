@@ -1,0 +1,59 @@
+---
+import Title from "../../components/modules/Title.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TextImgInline from "../../components/modules/TextImgInline.astro";
+
+
+const data = [
+  {
+    imgUrl: "/assets/images/puma.png",
+    texts: [
+      "Les explorateurs seront amenés à faire des recherches sur les causes de l'évolution planétaire, en se concentrant sur les enjeux climatiques actuels tels que la pollution et la fonte des glaciers.",
+      "Leur mission principale consiste à décrire les différentes zones de la planète, en tenant compte du climat actuel mais aussi des zones froides, chaudes, tropicales et radioactives. Ils devront notamment faire des descriptions détaillées du relief et des caractéristiques des régions."
+    ],
+  },
+  {
+    imgUrl: "/assets/images/serpend.png",
+    texts: [
+      "Chaque explorateur va sélectionner un animal adapté à son environnement, explorer les possibles évolutions de l'espèce et partager ces découvertes avec son équipe.",
+      "Les explorateurs avancés bénéficieront d'un module spécifique qui approfondit l'étude des animaux et explore un futur probable à travers des recherches scientifiques et des débats.",
+    ],
+  },
+  {
+    imgUrl: "/assets/images/tortue.png",
+    texts: [
+      "La représentation visuelle des animaux du futur repose sur un processus itératif combinant le dessin et les technologies d'intelligence artificielle, explorant ainsi la relation entre l'humain et la machine dans un contexte créatif.",
+      "Chaque expédition se conclut par l'exposition des créations, permettant des débats sur la biodiversité. ",
+      "Les explorateurs reçoivent ensuite une carte postale de leur animal avec une fiche d'identité, tandis que chaque espèce est répertoriée dans un bestiaire digital accessible via un QR code permanent, assurant le suivi et la continuité du projet pour les nouveaux et les anciens participants."
+    ],
+  },
+]
+
+---
+
+
+<BaseLayout>
+
+  <main class="container">
+
+    <Title title="N°3 Grand Explorateur " sideText="15ans et plus"/>
+
+
+    {data.map(({imgUrl, texts}, index) => <TextImgInline imgUrl={imgUrl} texts={texts} reverse={index % 2 === 1 ? true : false}/>)}
+
+
+  </main>
+
+
+
+
+
+</BaseLayout>
+
+
+<style lang="scss">
+
+
+
+
+</style>

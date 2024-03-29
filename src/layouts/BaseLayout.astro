@@ -14,9 +14,9 @@ import '../styles/app.css';
 
     <body>
 
-    <main>
+
         <slot/>
-    </main>
+
 
 </body>
 </html>
@@ -31,6 +31,17 @@ import '../styles/app.css';
   /*configuration du container*/
   .container{
     margin: 50px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    @media (min-width: 1000px){
+      max-width: 800px;
+    }
+    @media (min-width: 1200px){
+      max-width: 1000px;
+    }
+    @media (min-width: 1460px){
+      max-width: 1200px;
+    }
   }
 
   h1 {
