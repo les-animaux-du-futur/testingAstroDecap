@@ -13,12 +13,15 @@ import '../styles/app.css';
     </head>
 
     <body>
-
-
         <slot/>
+    </body>
+<footer>
+  <a class="mention" href="#">Mentions légale © <span id="date"></span></a>
+</footer>
 
-
-</body>
+  <script>
+    document.getElementById("date").textContent = String(new Date().getFullYear());
+  </script>
 </html>
 
 
@@ -27,6 +30,19 @@ import '../styles/app.css';
     background: #131515;
     color: #E1F6FF;
     font-family: DMSans;
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 20px 0;
+        a{
+        font-size: 14px;
+        font-weight: 700;
+        color: #E1F6FF;
+        text-decoration: none;
+        }
+    }
   }
   /*configuration du container*/
   .container{
