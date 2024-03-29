@@ -19,7 +19,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     <p>Il a comme ambition de vibrer sous les yeux des jeunes générations, d’inciter les élèves de collège, 
                        primaire et de lycée à imaginer la richesse d’un monde futur.</p>
                 </div>
-                <img src="" alt="">
+                <img class="img_atelier" src="../../public/assets/blog/img_atelier.webp" alt="">
             </div>
 
             <!-- Deucième partie "Les modules" avec les 3 cartes -->
@@ -34,28 +34,188 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                        les enfants aux enjeux climatiques, tout en stimulant leur imagination de façon pédagogique 
                        et récréative.</p>
                 </div>
-                <div>
-                    <div>
-                        <h2>Petit</h2>
-                        <h2>Explorateur</h2>
-                        <h3>De 6 a 11ans</h3>
-                    </div>
-                    <div>
-                        <h2>Explorateur</h2>
-                        <h3>De 12 a 15ans</h3>
-                    </div>
-                    <div>
-                        <h2>Grand</h2>
-                        <h2>Explorateur</h2>
-                        <h3>De 6 a 11ans</h3>
-                    </div>
+                <div class="card_module">
+                    <a href="#">
+                    <div class="card1">
+                            <h2 class="first_h2">Petit</h2>
+                            <h2 class="second_h2">Explorateur</h2>
+                            <h3>De 6 a 11ans</h3>
+                        </div>
+                    </a>
+                    <a href="#">
+                    <div class="card2">
+                            <h2 class="h2_card2">Explorateur</h2>
+                            <h3>De 12 a 15ans</h3>
+                        </div>
+                    </a>
+                    <a href="">
+                    <div class="card3">
+                            <h2 class="first_h2">Grand</h2>
+                            <h2 class="second_h2">Explorateur</h2>
+                            <h3>De 6 a 11ans</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
 </BaseLayout>
 
-<style lang="sass">
+<style lang="scss">
+    body{
+        background: #131515;
+    }
+    //configuration du container
+    .container{
+        margin: 50px 30px;
 
+        h1{
+            font-size: 48px;
+            font-weight: 500;
+            color: #E1F6FF;
+        }
+        h2{
+            font-size: 35px;
+            font-weight: 500;
+            color: #E1F6FF;
+        }
+        h3{
+            font-size: 25px;
+            font-weight: 500;
+            color: #E1F6FF;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            color: #E1F6FF;
+        }
+        a{
+            font-size: 14px;
+            font-weight: 700;
+            color: #E1F6FF;
+        }
+        //div project
+        .container_project{
+            width: 100%;
+
+            .img_atelier{
+                width: 100%;
+            }
+        }
+        //div module
+        .container_module{
+            padding-top: 64px;
+            width: 100%;
+            .card_module{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 32px;
+                justify-content: center;
+                align-items: center;
+                padding: 64px 0;
+            }
+            //la première carte animé des 3 modules différents
+            .card1{
+                width: 250px;
+                height: 400px;
+                background-image: url('../../assets/blog/img_petit_explorateur.webp');
+                background-size: cover;
+                filter: brightness(60%);
+                transition: 0.2s;
+                transition: transform 0.3s ease;
+                &:hover{
+                    transition: 0.2s;
+                    filter: brightness(100%);
+                    transform: scale(1.05);
+                }
+                h2{
+                    margin: -2px;
+                    margin-left: 50px;
+                    color: #000;
+                }
+                .first_h2{
+                    display: flex;
+                    padding-top: 260px;
+                }
+                h3{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 0;
+                    margin-right: 16px;
+                    color: #000;
+                }
+            }
+            //deuxième carte des 3 modules différents
+            .card2{
+                width: 250px;
+                height: 400px;
+                background-image: url('../../assets/blog/img_explorateur.webp');
+                background-size: cover;
+                filter: brightness(60%);
+                transition: 0.2s;
+                transition: transform 0.3s ease;
+                &:hover{
+                    transition: 0.2s;
+                    filter: brightness(100%);
+                    transform: scale(1.05);
+                }
+                h2{
+                    margin: -2px;
+                    margin-left: 50px;
+                }
+                .h2_card2{
+                    display: flex;
+                    padding-top: 290px;
+                }
+                h3{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 0;
+                    margin-right: 16px;
+                }
+            }
+            //troisième carte des 3 modules différents
+            .card3{
+                width: 250px;
+                height: 400px;
+                background-image: url('../../assets/blog/img_grand_explorateur.webp');
+                background-size: cover;
+                filter: brightness(60%);
+                transition: 0.2s;
+                transition: transform 0.3s ease;
+                &:hover{
+                    transition: 0.2s;
+                    filter: brightness(100%);
+                    transform: scale(1.05);
+                }
+                h2{
+                    margin: -2px;
+                    margin-left: 50px;
+                }
+                .first_h2{
+                    display: flex;
+                    padding-top: 260px;
+                }
+                h3{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 0;
+                    margin-right: 16px;
+                }
+            }
+        }
+        .text{
+            line-height: 130%;
+        }
+    }  
+    @media screen and (min-width: 768px){
+        .container_project{
+            display: flex;
+            flex-direction: row;
+            .img_atelier{
+                width: 400px;
+            }
+        }
+    }
 
 </style>
