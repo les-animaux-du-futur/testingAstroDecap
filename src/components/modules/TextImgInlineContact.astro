@@ -1,18 +1,30 @@
 ---
 
+import Button from "../../components/Button.astro";
+
 interface Props {
   texts: string[];
   imgUrl: string
+  pdfUrl: string
   reverse?: boolean
 }
 
-const {texts, imgUrl, reverse} = Astro.props
+const {texts, imgUrl, pdfUrl, reverse} = Astro.props
 ---
 
 
 <div class={`inlineContainer ${reverse ? 'reverse' : ''}`}>
   <div class="texts">
     {texts.map((text: string) => <p>{text}</p>)}
+    <div class="contact">
+      <h4>Intéressé par le projet ?</h4>
+      <Button href={pdfUrl}>Téléchargez le pdf</Button>
+      <p>Pour commencer l'aventure !</p>
+    </div>
+    <div class="contact">
+      <h4>Une question ?</h4>
+      <Button href="/contact">Contactez-nous</Button>
+    </div>
   </div>
   <div class="img">
     <img src={imgUrl} alt="">
