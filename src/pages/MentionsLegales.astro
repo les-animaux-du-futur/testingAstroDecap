@@ -76,23 +76,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 justify-content: center;
             }
             .container{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: start;
-                gap: 20px;
-            }
-            .text1{
-                width: 487px;
-            }
-            .text2{
-                width: 650px;
-            }
-            .text3{
-                width: 487px;
-            }
-            .text4{
-                width: 630px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
             }
         }
     }
