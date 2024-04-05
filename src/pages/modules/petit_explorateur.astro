@@ -2,8 +2,7 @@
 import Title from "../../components/modules/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TextImgInline from "../../components/modules/TextImgInline.astro";
-import Button from "../../components/Button.astro";
-
+import TextImgInlineContact from "../../components/modules/TextImgInlineContact.astro";
 
 ---
 
@@ -14,17 +13,10 @@ import Button from "../../components/Button.astro";
 
     <Title title="N°1 Petit Explorateur" sideText="De 6 à 11ans"/>
 
+    <TextImgInline imgUrl="/assets/images/petitExplorateur1.png" texts={["Avec l’aide des professeurs, les petits explorateurs vont étudier les animaux d’aujourd’hui en se basant sur les “Animaux du Futur” préexistants.","Ils seront amenés à reproduire les sons des animaux ou de la météo. Ils auront aussi à imaginer la routine de vie de ces animaux en dessinant les bases de leur alimentation grâce à leurs recherches.","Les animaux répertoriés par les explorations précédentes seront complétés par les élèves avec le professeur de manière pédagogique tout en prenant exemple sur le mode de vie des animaux actuels"]}/>
+    <TextImgInline reverse imgUrl="/assets/images/petitExplorateur2.png" texts={["C’est une occasion spéciale pour sensibiliser les enfants, de les sensibiliser et de leur faire prendre conscience de ce qui les entoure. Les petits explorateurs repartiront avec l’animal étudié sous la forme d’une carte postale, révélant au verso la fiche le travail sur les routines de vie qu’ils ont imaginées.","Cet espace est accessible à travers l’exposition et les cartes postales grâce à un QR code qui restera inchangé pendant toute la vie du projet. Cela permettra aux nouveaux explorateurs comme aux plus anciens de connaître la suite de l’aventure."]}/>
+    <TextImgInlineContact imgUrl="/assets/images/petitExplorateur3.png" pdfUrl="" texts={["Pour conclure l'expédition, nous présentons les fiches des animaux décrivant leur routine quotidienne, accompagnées d'une immersion sonore dans leur environnement climatique."]}/>
 
-
-    <TextImgInline imgUrl="/assets/images/Chouette.png" texts={["Avec l’aide des professeurs, les petits explorateurs vont étudier les animaux d’aujourd’hui en se basant sur les “Animaux du Futur” préexistants.","Ils seront amenés à reproduire les sons des animaux ou de la météo. Ils auront aussi à imaginer la routine de vie de ces animaux en dessinant les bases de leur alimentation grâce à leurs recherches.","Les animaux répertoriés par les explorations précédentes seront complétés par les élèves avec le professeur de manière pédagogique tout en prenant exemple sur le mode de vie des animaux actuels"]}/>
-    <TextImgInline reverse imgUrl="/assets/images/tigre.png" texts={["C’est une occasion spéciale pour sensibiliser les enfants, de les sensibiliser et de leur faire prendre conscience de ce qui les entoure. Les petits explorateurs repartiront avec l’animal étudié sous la forme d’une carte postale, révélant au verso la fiche le travail sur les routines de vie qu’ils ont imaginées.","Cet espace est accessible à travers l’exposition et les cartes postales grâce à un QR code qui restera inchangé pendant toute la vie du projet. Cela permettra aux nouveaux explorateurs comme aux plus anciens de connaître la suite de l’aventure."]}/>
-    <TextImgInline imgUrl="/assets/images/koala.png" texts={["Pour conclure l'expédition, nous présentons les fiches des animaux décrivant leur routine quotidienne, accompagnées d'une immersion sonore dans leur environnement climatique."]}/>
-
-    <h3>Vous êtes intéressé par notre projet ?</h3>
-    <div class="contact">
-
-      <Button href="/contact">Contactez nous</Button><p>pour mettre en place le projet dès maintenant !</p>
-    </div>
   </main>
 
 

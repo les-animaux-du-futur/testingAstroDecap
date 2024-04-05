@@ -2,31 +2,23 @@
 import Title from "../../components/modules/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TextImgInline from "../../components/modules/TextImgInline.astro";
-import Button from "../../components/Button.astro";
+import TextImgInlineContact from "../../components/modules/TextImgInlineContact.astro";
 
 
 const data = [
   {
-    imgUrl: "/assets/images/dauphin.png",
+    imgUrl: "/assets/images/explorateur1.png",
     texts: [
-      "Chaque explorateur va avoir à se documenter et étudier un animal en lien avec son environnement.",
-      "Il partage ses découvertes en équipe, échange et débat des évolutions possibles de l’espèce. C’est un espace où art, science et imagination s’entremêlent pour enrichir la vision des participants."
+      "Chaque explorateur va avoir à se documenter et étudier un animal en lien avec son environnement. ",
+      "Il partage ses découvertes en équipe, échange et débat des évolutions possibles de l’espèce. C’est un espace où art, science et imagination s’entremêlent pour enrichir la vision des participants.",
     ],
   },
   {
-    imgUrl: "/assets/images/abeille.png",
+    imgUrl: "/assets/images/explorateur2.png",
     texts: [
       "Un dialogue entre spontanéité et innovation, questionne le rapport de l’humain à la machine dans une démarche créative.",
       "Pour mettre en lumière le procédé de création, prenons en exemple la première espèce du futur recensée dans ce projet, la « Poulosaure ».",
-      "Pour clôturer chaque expédition, nous exposons les créations dans le lieu d’accueil, avant qu’elles ne commencent leurs itinérances dans d’autres lieux propices aux alentours. Ces moments de célébration sont des occasions précieuses pour animer des débats autour des illustrations et de notre biodiversité."
-    ],
-  },
-  {
-    imgUrl: "/assets/images/loup.png",
-    texts: [
-      "Les explorateurs repartent avec leur animal sous la forme d’une carte postale, révélant au verso la fiche d’identité de l’espèce qu’ils ont découvert.",
-      "Ensuite, chaque espèce est répertoriée dans le bestiaire digital, qui va grandir au fil des années et des interventions.",
-      "Cet espace est accessible à travers l’exposition et les cartes postales grâce à un QR code qui restera inchangé pendant toute la vie du projet. Cela permettra aux nouveaux explorateurs comme aux plus anciens de suivre la suite de l’aventure."
+      "Pour clôturer chaque expédition, nous exposons les créations dans le lieu d’accueil, avant qu’elles ne commencent leurs itinérances dans d’autres lieux propices aux alentours. Ces moments de célébration sont des occasions précieuses pour animer des débats autour des illustrations et de notre biodiversité.",
     ],
   },
 ]
@@ -43,11 +35,7 @@ const data = [
 
     {data.map(({imgUrl, texts}, index) => <TextImgInline imgUrl={imgUrl} texts={texts} reverse={index % 2 === 1 ? true : false}/>)}
 
-    <h3>Vous êtes intéressé par notre projet ?</h3>
-    <div class="contact">
-
-      <Button href="/contact">Contactez nous</Button><p>pour mettre en place le projet dès maintenant !</p>
-    </div>
+    <TextImgInlineContact imgUrl="/assets/images/explorateur3.png" pdfUrl="" texts={["Pour conclure l'expédition, nous présentons les fiches des animaux décrivant leur routine quotidienne, accompagnées d'une immersion sonore dans leur environnement climatique."]} reverse={false}/>
   </main>
 
 
@@ -63,8 +51,4 @@ const data = [
     align-items: center;
     gap: 1.2rem;
   }
-
-
-
-
 </style>
