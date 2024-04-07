@@ -2,7 +2,7 @@
 import Title from "../../components/modules/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TextImgInline from "../../components/modules/TextImgInline.astro";
-import Button from "../../components/Button.astro";
+import Contact from "../../components/modules/Contact.astro";
 
 
 const data = [
@@ -43,28 +43,7 @@ const data = [
 
     {data.map(({imgUrl, texts}, index) => <TextImgInline imgUrl={imgUrl} texts={texts} reverse={index % 2 === 1 ? true : false}/>)}
 
-    <h3>Vous êtes intéressé par notre projet ?</h3>
-    <div class="contact">
-
-      <Button href="/contact">Contactez nous</Button><p>pour mettre en place le projet dès maintenant !</p>
-    </div>
+    <Contact/>
   </main>
 
-
-
-
-
 </BaseLayout>
-
-
-<style lang="scss">
-  .contact {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-
-
-
-</style>

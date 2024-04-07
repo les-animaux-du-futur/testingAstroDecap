@@ -1,27 +1,15 @@
 ---
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
+import BlogHeader from '../components/SideBar.astro';
 import Drawer from '../components/Drawer.astro';
 
 import { SITE } from '../config';
 import { readdirSync, readFileSync } from 'fs'
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let { title } = SITE;
 let description = "Imaginer les animaux qui vivront sur notre planète dans plusieurs millions d'années, un projet pédagigique engagé";
 let permalink = 'https://les-animaux-du-futur.netlify.app/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-// let allPosts = await Astro.glob('./posts/*.md');
-// allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 
 let biomes = {};
 
