@@ -19,6 +19,17 @@ export default defineConfig({
         collections: [
           {
             extension: "json",
+            name: "biomes",
+            label: "Biomes",
+            label_singular: "Biome",
+            folder: "src/pages/biomes",
+            create: true,
+            delete: true,
+            identifier_field: "name",
+            fields: [{ name: "name", widget: "string", label: "Nom" }],
+          },
+          {
+            extension: "json",
             name: "species",
             label: "Espèces",
             label_singular: "Espèce",
