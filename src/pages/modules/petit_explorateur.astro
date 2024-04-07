@@ -2,7 +2,7 @@
 import Title from "../../components/modules/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TextImgInline from "../../components/modules/TextImgInline.astro";
-import Button from "../../components/atoms/Button.astro";
+
 import Contact from "../../components/modules/Contact.astro";
 
 const data = [
@@ -38,11 +38,7 @@ const data = [
 
     <Title title="N°1 Petit Explorateur" sideText="De 6 à 11ans"/>
 
-
-
     {data.map(({imgUrl, texts}, index) => <TextImgInline imgUrl={imgUrl} texts={texts} reverse={index % 2 === 1 ? true : false}/>)}
-
-
 
     <Contact/>
   </main>
