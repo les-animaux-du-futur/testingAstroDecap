@@ -26,7 +26,10 @@ export default defineConfig({
             create: true,
             delete: true,
             identifier_field: "name",
-            fields: [{ name: "name", widget: "string", label: "Nom" }],
+            fields: [
+              { name: "name", label: "Nom", widget: "string" },
+              { name: "color", label: "Color", widget: "color" },
+            ],
           },
           {
             extension: "json",
@@ -65,15 +68,12 @@ export default defineConfig({
               {
                 name: "biome",
                 label: "Biome",
-                widget: "select",
-                default: "desert",
-                options: [
-                  { label: "désert", value: "desert" },
-                  { label: "Forêt", value: "forest" },
-                  { label: "Montagne", value: "montagne" },
-                  { label: "Océan", value: "ocean" },
-                  { label: "Tropical", value: "tropical" },
-                ],
+                widget: "relation",
+
+                collection: "biomes",
+                search_fields: ["name"],
+                value_field: "name",
+                display_fields: ["name"],
               },
               {
                 name: "height",

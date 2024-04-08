@@ -5,12 +5,11 @@ export interface Props {
 }
 
 const {id, data} = Astro.props;
-console.log(data);
 ---
 
 <div class="data-container" id={id}>
 
-    {data.map((specie) => (
+    {data?.map((specie) => (
         <div class="title">
             {specie.name}
         </div>

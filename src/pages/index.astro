@@ -5,28 +5,37 @@ import BlogHeader from '../components/SideBar.astro';
 import Drawer from '../components/Drawer.astro';
 
 import { SITE } from '../config';
-import { readdirSync, readFileSync } from 'fs'
+
+import { getBiomes, getSpecies } from '../functions';
 
 let { title } = SITE;
 let description = "Imaginer les animaux qui vivront sur notre planète dans plusieurs millions d'années, un projet pédagigique engagé";
 let permalink = 'https://les-animaux-du-futur.netlify.app/';
 
-let biomes = {};
+// let biomes = {};
 
-const speciesFolder = readdirSync('src/pages/species');
+// const speciesFolder = readdirSync('src/pages/species');
 
-speciesFolder.map((fileName) => {
-  const data = readFileSync(`src/pages/species/${fileName}`, {encoding: 'utf-8'});
-  const jsData = JSON.parse(data);
+// speciesFolder.map((fileName) => {
+//   const data = readFileSync(`src/pages/species/${fileName}`, {encoding: 'utf-8'});
+//   const jsData = JSON.parse(data);
 
-  const biomeName = jsData.biome;
+//   const biomeName = jsData.biome;
 
-  if (biomes[biomeName]) {
-    biomes[biomeName].push(jsData); // Ajouter l'espèce au biome existant
-  } else {
-    biomes[biomeName] = [jsData]; // Créer un nouveau tableau pour le biome et y ajouter l'espèce
-  }
-});
+//   if (biomes[biomeName]) {
+//     biomes[biomeName].push(jsData); // Ajouter l'espèce au biome existant
+//   } else {
+//     biomes[biomeName] = [jsData]; // Créer un nouveau tableau pour le biome et y ajouter l'espèce
+//   }
+// });
+
+const {species} = getSpecies()
+const {biomes} = getBiomes()
+
+console.log(species);
+console.log('--------------');
+console.log(biomes);
+
 
 ---
 
