@@ -27,6 +27,18 @@ export default defineConfig({
             delete: true,
             identifier_field: "name",
             fields: [
+              {
+                label: "Id",
+                name: "id",
+                widget: "hidden",
+                default: "{{ uuid }}",
+              },
+              {
+                label: "Slug",
+                name: "slug",
+                widget: "hidden",
+                default: "{{slug}}",
+              },
               { name: "name", label: "Nom", widget: "string" },
               { name: "color", label: "Color", widget: "color" },
             ],

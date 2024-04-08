@@ -4,44 +4,65 @@
 	<nav>
 		<div class="logo">
       <a href="/">
-
         <img src="/assets/blog/logo.svg" alt="">
       </a>
 		</div>
 		<ul>
 			<li>
 				<a href="/">
-					<img src="/assets/blog/map.png" alt="">
-					<span>Carte</span>
+          <div class="block">
+            <img src="/assets/blog/map.png" alt="">
+            <p>Carte</p>
+          </div>
 				</a>
 			</li>
-			<li>
+			<!-- <li>
 				<a href="/project">
 					<img src="/assets/blog/project.svg" alt="">
-					<span>Projet</span>
+					<p>Projet</p>
 				</a>
 			</li>
 			<li>
 				<a href="/histoire">
 					<img src="/assets/blog/history.svg" alt="">
-					<span>Histoire</span>
+					<p>Histoire</p>
 				</a>
 			</li>
 			<li>
 				<a href="/contact">
 					<img src="/assets/blog/contact.svg" alt="">
-					<span>Contact</span>
+					<p>Contact</p>
 				</a>
-			</li>
+			</li> -->
 		</ul>
     <div class=""></div>
 	</nav>
 </header>
 
-<style lang="scss">
-	header {
 
+<script>
+  const header = document.querySelector<HTMLDivElement>('header.wrapper')
+  console.log(header);
+
+  const headerWidth = header.clientWidth
+  const headerSmallWidth = 80
+  header.style.width = `${headerSmallWidth}px`
+  header.style.transition = "width 0.16s linear"
+
+  header.addEventListener('mouseenter', () => {
+    header.style.width = `${headerWidth}px`
+  })
+  header.addEventListener('mouseleave', () => {
+    header.style.width = `${headerSmallWidth}px`
+  })
+
+</script>
+
+<style lang="scss">
+
+	header {
 		left: 0;
+    overflow: hidden;
 		top: 0;
 		height: 100%;
 		padding: 1rem;
@@ -51,11 +72,14 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+      align-items: flex-start;
 			height: 100%;
 
 			.logo {
+        margin: 0 auto;
 				img {
-					width: 4rem;
+					width: 2.8rem;
+          max-width: none;
 				}
 			}
 			ul {
@@ -66,22 +90,25 @@
 				gap: 3rem;
         padding: 0;
 				li {
-
-					a {
+          a {
+            color: #E1F6FF;
+          }
+					.block {
 						display: flex;
-						gap: 1rem;
+            align-items: center;
+						gap: 1.4rem;
 
 						img {
 							width: 3rem;
 						}
-						span {
-							max-width: 0;
-							overflow: hidden;
-							display: none;
+						p {
+              width: fit-content;
+              color: #E1F6FF;
 						}
 					}
 				}
 			}
 		}
+
 	}
 </style>
