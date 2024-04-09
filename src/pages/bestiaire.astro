@@ -116,6 +116,8 @@ const {biomes} = getBiomes()
 		}
 
 		dataContainer.innerHTML = sortedSpecies.map(specie => {
+			const biome = biomes.find(biome => biome.name.toLowerCase() === specie.biome.toLowerCase());
+			const biomeColor = biome ? biome.color : 'black';
 			return `
 			<div class="animal">
 				<img src=${specie.speciesImage} alt=""/>
@@ -127,7 +129,7 @@ const {biomes} = getBiomes()
 						${specie.name}
 					</h4>
 				</div>
-				<div class="biome" style="background-color: ${specie.color};">
+				<div class="biome" style="background-color: ${biomeColor};">
 					<p>
 						${specie.biome}
 					</p>
@@ -179,15 +181,20 @@ const {biomes} = getBiomes()
 		svg {
 			position: absolute;
 			right: 1rem;
+			pointer-events: none;
 		}
 	}
 	.filters {
 		display: flex;
 		gap: 1.75rem;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
 		.content-filter {
 			position: relative;
 			display: flex;
 			align-items: center;
+			width: fit-content;
 			svg {
 				pointer-events :none;
 			}
