@@ -8,29 +8,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h1>CONTACT</h1>
     <section class="container">
             <div class="bloc_contact">
-                <img class="line" src="../../public/assets/blog/line.svg" alt="line arrondi">
+                <img class="line" src="/assets/blog/line.svg" alt="line arrondi">
                 <div class="bloc_text">
-                    <div class="bloc_tittle">
-                    <img src="../../public/assets/blog/icone_message.svg" alt="icone d'une bulle de message">
-                    <h2>Laissez-nous un petit mot !</h2>
-                    </div>
-                    <p>Partagez-nous votre projet, vos idées, vos questions et nous reviendrons vers 
-                        vous au plus vite.</p>
+                    <img src="/assets/blog/icone_message.svg" alt="icone d'une bulle de message">
+                    <h3>Laissez-nous un petit mot !</h3>
+                    <p>Vous êtes intéressé par notre projet ? Vous avez des questions ? n'hésitez pas, contactez nous !</p>
                     <div class="button">
-                        <a class="a_button" href="">
+                        <a class="a_button" href="mailto:ladf.lesanimauxdufutur@gmail.com">
                             <button>Nous contacter</button>
                         </a>
                     </div>
                 </div>
-                <img src="../../public/assets/blog/chicken.webp" alt="Image d'une pouleosaure">
+                <img src="/assets/blog/chicken.webp" alt="Image d'une pouleosaure">
             </div>
     </section>
-    <footer>
-        <a class="mention" href="#">Mentions légale © <span id="date"></span></a>
-    </footer>
-        <script>
-        document.getElementById("date").textContent = String(new Date().getFullYear());
-        </script>
 </BaseLayout>
 
 <style lang="scss">
@@ -53,8 +44,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         }
         .bloc_contact{
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
@@ -70,12 +59,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         .bloc_text{
             display: flex;
             flex-direction: column;
+            gap: 1.5rem;
+            h3, p {
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
             img{
                 width: 50px;
                 height: 50px;
             }
         }
         button{
+            
             width: 150px;
             height: 53px;
             border-radius: 8px;

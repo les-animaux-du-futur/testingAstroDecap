@@ -1,5 +1,7 @@
 {
-  "biome": "forest",
+  "id": "002",
+  "color": "#75D964",
+  "biome": "Forêt",
   "height": "78 cm",
   "name": "HIBOUETTE",
   "EvolutionDescripption": "Mignon rapace nocturne très sociable, il vit principalement dans la forêt. Ses plumes sont similaires à des écailles, lui procurant une armure contre les prédateurs ou les chocs violents.",

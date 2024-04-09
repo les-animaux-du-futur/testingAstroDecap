@@ -1,5 +1,7 @@
 {
-  "biome": "desert",
+  "id": "006",
+  "color": "#F7DE5B",
+  "biome": "Désert",
   "height": "1,2 m",
   "name": "TORTUE CINGLANTE",
   "EvolutionDescripption": "La tortue cinglante possède des dents pointues, et des griffes acérées pour se défendre et chasser. Sa carapace est venimeuse. Elle se sert également de sa longue queue comme d’un fouet pour repousser ses assaillants.",

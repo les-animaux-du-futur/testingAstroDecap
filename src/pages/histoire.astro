@@ -9,12 +9,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="div_video">
             <h1>L'HISTOIRE</h1>
             <div>
-                <video controls>
-                    <source src="chemin_de_votre_video.mp4" type="video/mp4">
-                    <source src="chemin_de_votre_video.webm" type="video/webm">
-                    <source src="chemin_de_votre_video.ogg" type="video/ogg">
-                    Votre navigateur ne prend pas en charge la lecture de vidéos.
-                </video>
+
+              <iframe src="https://player.vimeo.com/video/925550478?h=50c9f54e1d" width="640" height="360" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
             </div>
         </div>
         <div class="report">
@@ -43,10 +40,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     body{
         background: #131515;
 
+      iframe {
+        border: 0;
+      }
 
     //configuration du container
     .container{
-        
+
         .div_video{
             display: flex;
             flex-direction: column;

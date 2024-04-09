@@ -2,6 +2,8 @@
 import Title from "../../components/modules/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TextImgInline from "../../components/modules/TextImgInline.astro";
+import Button from "../../components/atoms/Button.astro";
+import Contact from "../../components/modules/Contact.astro";
 
 
 const data = [
@@ -13,7 +15,7 @@ const data = [
     ],
   },
   {
-    imgUrl: "/assets/images/serpend.png",
+    imgUrl: "/assets/images/serpent.png",
     texts: [
       "Chaque explorateur va sélectionner un animal adapté à son environnement, explorer les possibles évolutions de l'espèce et partager ces découvertes avec son équipe.",
       "Les explorateurs avancés bénéficieront d'un module spécifique qui approfondit l'étude des animaux et explore un futur probable à travers des recherches scientifiques et des débats.",
@@ -33,27 +35,13 @@ const data = [
 
 
 <BaseLayout>
-
   <main class="container">
 
     <Title title="N°3 Grand Explorateur " sideText="15ans et plus"/>
 
-
     {data.map(({imgUrl, texts}, index) => <TextImgInline imgUrl={imgUrl} texts={texts} reverse={index % 2 === 1 ? true : false}/>)}
 
+    <Contact/>
 
   </main>
-
-
-
-
-
 </BaseLayout>
-
-
-<style lang="scss">
-
-
-
-
-</style>

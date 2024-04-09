@@ -27,7 +27,7 @@ const {texts, imgUrl, reverse} = Astro.props
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     flex-direction: column;
     @media (min-width: 700px){
       flex-direction: row;
@@ -46,20 +46,19 @@ const {texts, imgUrl, reverse} = Astro.props
     }
   }
   .img {
-    min-width: 30%;
-    aspect-ratio: 3 / 4;
+    min-width: 50%;
     overflow: hidden;
 
-    @media (min-width: 600px){
-      min-width: 24%;
-    }
+    // @media (min-width: 600px){
+    //   min-width: 24%;
+    // }
 
-    @media (min-width: 1300px){
-      min-width: 29%;
-    }
-    @media (min-width: 1700px){
-      min-width: 20%;
-    }
+    // @media (min-width: 1300px){
+    //   min-width: 29%;
+    // }
+    // @media (min-width: 1700px){
+    //   min-width: 20%;
+    // }
   }
   img {
     width: 100%;

@@ -1,0 +1,33 @@
+---
+import Button from "../atoms/Button.astro";
+
+
+const pdfUrl = ''
+---
+    <div class="contact">
+      <h3>Intéressé par le projet ?</h3>
+      <div class="content">
+
+        <Button href={pdfUrl}>Téléchargez le pdf</Button>
+        <p>Pour commencer l'aventure !</p>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>Une question ?</h3>
+      <Button href="/contact">Contactez-nous</Button>
+    </div>
+
+
+
+<style lang="scss">
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    p {
+      margin: 0;
+    }
+  }
+
+
+</style>

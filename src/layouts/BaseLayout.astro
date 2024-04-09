@@ -1,5 +1,5 @@
 ---
-import BlogHeader from '../components/BlogHeader.astro';
+import SideBar from '../components/SideBar.astro';
 import { SITE } from '../config';
 import '../styles/app.css';
 
@@ -18,7 +18,7 @@ import '../styles/app.css';
         <slot/>
     </body>
 <footer>
-  <a class="mention" href="../pages/MentionsLegales.astro">Mentions légale © <span id="date"></span></a>
+  <a class="mention" href="/MentionsLegales">Mentions légales © <span id="date"></span></a>
 </footer>
 
   <script>
@@ -28,6 +28,9 @@ import '../styles/app.css';
 
 
 <style lang="scss" is:global>
+  html {
+    padding-left: 6rem;
+  }
   body {
     background: #131515;
     color: #E1F6FF;
@@ -38,7 +41,7 @@ import '../styles/app.css';
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        padding: 20px 0;
+        padding: 2.5rem 0;
         a{
         font-size: 14px;
         font-weight: 700;

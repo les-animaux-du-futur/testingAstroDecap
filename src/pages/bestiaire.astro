@@ -1,0 +1,116 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/SideBar.astro';
+import Drawer from '../components/Drawer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import { SITE } from '../config';
+
+import { getBiomes, getSpecies } from '../functions';
+
+let { title } = SITE;
+let description = "Imaginer les animaux qui vivront sur notre planète dans plusieurs millions d'années, un projet pédagigique engagé";
+let permalink = 'https://les-animaux-du-futur.netlify.app/';
+
+const {species} = getSpecies()
+const {biomes} = getBiomes()
+
+---
+
+<html lang="fr">
+	<head>
+		<BaseHead {title} {description} {permalink} />
+		
+	</head>
+
+	<body>
+		<BlogHeader/>
+		
+		<BaseLayout>
+			<section class="container content">
+				<h1>LE BESTIAIRE</h1>
+				<input type="search" id="searchInput" oninput="filterSpecies()"/>
+				<!-- <Drawer data={species}/> -->
+				<div class="data-container"></div>
+			</section>
+		</BaseLayout>
+		
+	</body>
+</html>
+
+<script is:inline define:vars={{species}}>
+	const dataContainer = document.querySelector('.data-container');
+	const searchInput = document.getElementById('searchInput');
+	
+	// Fonction de filtrage
+	function filterSpecies() {
+		const searchTerm = searchInput.value.trim().toLowerCase();
+		const filteredSpecies = species.filter(specie => specie.name.toLowerCase().includes(searchTerm));
+	
+		// Mettre à jour la grille avec les animaux filtrés
+		dataContainer.innerHTML = filteredSpecies.map(specie => {
+			return `
+			<div class="animal">
+				<img src=${specie.speciesImage} alt=""/>
+				<div class="title">
+					<h4>
+						#${specie.id}
+					</h4>
+					<h4>
+						${specie.name}
+					</h4>
+				</div>
+				<div class="biome" style="background-color: ${specie.color};">
+					<h4>
+						${specie.biome}
+					</h4>
+				</div>
+			</div>
+			`;
+		}).join('');
+	}
+	
+	// Appel initial pour afficher tous les animaux
+	filterSpecies();
+	searchInput.addEventListener('input', filterSpecies);
+</script>
+
+<style lang="scss" is:global>
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+	#searchInput {
+		width: 20rem;
+		height: 3rem;
+		border-radius: 2rem;
+	}
+	.data-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+        .animal {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            .title {
+                color: #E1F6FF;
+            }
+            .biome {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 9.0625rem;
+                height: 1.875rem;
+                border-radius: 1.125rem;
+                color: black;
+            }
+            h4 {
+                margin: 0;
+            }
+        }
+    }
+}
+</style>

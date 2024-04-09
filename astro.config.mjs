@@ -19,6 +19,32 @@ export default defineConfig({
         collections: [
           {
             extension: "json",
+            name: "biomes",
+            label: "Biomes",
+            label_singular: "Biome",
+            folder: "src/pages/biomes",
+            create: true,
+            delete: true,
+            identifier_field: "name",
+            fields: [
+              {
+                label: "Id",
+                name: "id",
+                widget: "hidden",
+                default: "{{ uuid }}",
+              },
+              {
+                label: "Slug",
+                name: "slug",
+                widget: "hidden",
+                default: "{{slug}}",
+              },
+              { name: "name", label: "Nom", widget: "string" },
+              { name: "color", label: "Color", widget: "color" },
+            ],
+          },
+          {
+            extension: "json",
             name: "species",
             label: "Espèces",
             label_singular: "Espèce",
@@ -54,15 +80,12 @@ export default defineConfig({
               {
                 name: "biome",
                 label: "Biome",
-                widget: "select",
-                default: "desert",
-                options: [
-                  { label: "désert", value: "desert" },
-                  { label: "Forêt", value: "forest" },
-                  { label: "Montagne", value: "montagne" },
-                  { label: "Océan", value: "ocean" },
-                  { label: "Tropical", value: "tropical" },
-                ],
+                widget: "relation",
+
+                collection: "biomes",
+                search_fields: ["name"],
+                value_field: "name",
+                display_fields: ["name"],
               },
               {
                 name: "height",

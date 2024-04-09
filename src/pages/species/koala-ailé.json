@@ -1,5 +1,7 @@
 {
-  "biome": "montagne",
+  "id": "003",
+  "color": "#9A7A5C",
+  "biome": "Montagnes",
   "height": "60 cm",
   "name": "KOALA AILÉ",
   "EvolutionDescripption": "Évolution du Koala suite aux nombreuses catastrophes naturelles et prédateurs afin de lui permettre de s’échapper plus facilement. Il a également migré dans les montagnes suite à la destruction de son milieu de vie.",
