@@ -1,0 +1,92 @@
+---
+import NavList from "./NavList.astro";
+
+---
+
+
+<header class="mobile">
+  <div class="logo">
+    <a href="/">
+      <img src="/assets/blog/logo.svg" alt="">
+    </a>
+  </div>
+
+  <button class="burgerBtn">
+    <img class="burgerIcon" src="/assets/blog/Burger.svg" alt="">
+    <img class="burgerIcon hidden" src="/assets/blog/X.svg" alt="">
+  </button>
+
+
+</header>
+<div class="burgerContent">
+  <NavList/>
+</div>
+
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.burgerBtn')
+  const btnAll = document.querySelectorAll<HTMLButtonElement>('.burgerIcon')
+  const burgerContent = document.querySelector<HTMLDivElement>('.burgerContent')
+
+    btn.addEventListener('click', () => {
+      burgerContent.classList.toggle('isOpen')
+      btnAll.forEach(element => {
+        element.classList.toggle('hidden')
+      });
+    })
+
+</script>
+
+
+<style lang="scss">
+  .hidden {
+    display: none;
+  }
+  .burgerIcon {
+    width: 1rem;
+  }
+  .burgerContent {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.2s ease-out;
+    transform: translateX(100%);
+		background-color: #2D4436;
+    display: grid;
+    place-items: center;
+    @media (min-width: 660px){
+      display: none;
+    }
+  }
+
+  .isOpen {
+    transform: translateX(0);
+
+  }
+
+  .mobile {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+		background-color: #2D4436;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: 660px){
+      display: none;
+    }
+    img {
+					width: 2rem;
+          max-width: none;
+        }
+    button {
+      background-color: transparent;
+      border: none;
+    }
+
+  }
+</style>
