@@ -15,77 +15,66 @@ let permalink = 'https://les-animaux-du-futur.netlify.app/';
 const {species} = getSpecies()
 const {biomes} = getBiomes()
 ---
-
-<html lang="fr">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-	</head>
-
-	<body>
-		<BlogHeader/>
 		
-		<BaseLayout>
-			<section class="container content">
-				<div class="header-content">
-					<h1>LE BESTIAIRE</h1>
-					<div class="research">
-						<input type="search" id="searchInput" oninput="filterSpecies()"/>
-						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 44 43" fill="none">
-							<path d="M19.5977 36.7565C29.2314 36.7565 37.0411 29.0313 37.0411 19.5018C37.0411 9.97231 29.2314 2.24707 19.5977 2.24707C9.96401 2.24707 2.1543 9.97231 2.1543 19.5018C2.1543 29.0313 9.96401 36.7565 19.5977 36.7565Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
-							<path d="M32.332 32.0991L41.0386 40.7116" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M25.4017 12.7449C23.9163 11.2755 21.8641 10.3667 19.5973 10.3667C17.3306 10.3667 15.2784 11.2755 13.793 12.7449" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</div>
-				</div>
-				<div class="filters">
-					<div class="content-filter">
-						<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 35 32" fill="none">
-							<path d="M2 2.40137L14.4 16.0217V26.2477L20.6 29.1273V16.0217L33 2.40137H2Z" stroke="#E1F6FF" stroke-width="4" stroke-linejoin="round"/>
-						</svg>
-						<select name="filter" id="filter">
-							<option value="">Filtrer</option>
-						</select>
-						<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
-							<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</div>
-					<div class="content-filter">
-						<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 38 40" fill="none">
-							<path d="M32.8535 8.33301H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M21.7715 5V11.6667" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M21.7702 8.33301H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M10.6868 20H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M17.0215 16.667V23.3337" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M34.4382 20H17.0215" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M32.8535 31.667H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M21.7715 28.333V34.9997" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M21.7702 31.667H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-						<select name="sort" id="sort">
-							<option value="">Trier</option>
-							<option value="id">Identifiant</option>
-							<option value="biome">Biome</option>
-						</select>
-						<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
-							<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</div>
-					<div class="content-filter">
-						<select name="asc" id="asc">
-							<option value="asc">Ascendant</option>
-							<option value="desc">Descendant</option>
-						</select>
-						<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
-							<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</div>
-				</div>
-				<div class="data-container"></div>
-			</section>
-		</BaseLayout>
-		
-	</body>
-</html>
+<BaseLayout>
+	<section class="container content">
+		<div class="header-content">
+			<h1>LE BESTIAIRE</h1>
+			<div class="research">
+				<input type="search" id="searchInput" oninput="filterSpecies()"/>
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 44 43" fill="none">
+					<path d="M19.5977 36.7565C29.2314 36.7565 37.0411 29.0313 37.0411 19.5018C37.0411 9.97231 29.2314 2.24707 19.5977 2.24707C9.96401 2.24707 2.1543 9.97231 2.1543 19.5018C2.1543 29.0313 9.96401 36.7565 19.5977 36.7565Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+					<path d="M32.332 32.0991L41.0386 40.7116" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M25.4017 12.7449C23.9163 11.2755 21.8641 10.3667 19.5973 10.3667C17.3306 10.3667 15.2784 11.2755 13.793 12.7449" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+		</div>
+		<div class="filters">
+			<div class="content-filter">
+				<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 35 32" fill="none">
+					<path d="M2 2.40137L14.4 16.0217V26.2477L20.6 29.1273V16.0217L33 2.40137H2Z" stroke="#E1F6FF" stroke-width="4" stroke-linejoin="round"/>
+				</svg>
+				<select name="filter" id="filter">
+					<option value="">Filtrer</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+			<div class="content-filter">
+				<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 38 40" fill="none">
+					<path d="M32.8535 8.33301H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7715 5V11.6667" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7702 8.33301H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M10.6868 20H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M17.0215 16.667V23.3337" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M34.4382 20H17.0215" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M32.8535 31.667H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7715 28.333V34.9997" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7702 31.667H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<select name="sort" id="sort">
+					<option value="">Trier</option>
+					<option value="id">Identifiant</option>
+					<option value="biome">Biome</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+			<div class="content-filter">
+				<select name="asc" id="asc">
+					<option value="asc">Ascendant</option>
+					<option value="desc">Descendant</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+		</div>
+		<div class="data-container"></div>
+	</section>
+</BaseLayout>
 
 <script is:inline define:vars={{biomes, species}}>
 	const dataContainer = document.querySelector('.data-container');
@@ -243,6 +232,9 @@ const {biomes} = getBiomes()
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+			img {
+				width: 100%;
+			}
             .title {
                 color: #E1F6FF;
             }
