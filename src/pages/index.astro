@@ -1,27 +1,19 @@
 ---
 // Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/SideBar.astro';
-
 import { SITE } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 let { title } = SITE;
 let description = "Imaginer les animaux qui vivront sur notre planète dans plusieurs millions d'années, un projet pédagigique engagé";
 let permalink = 'https://les-animaux-du-futur.netlify.app/';
 
 ---
+<BaseLayout>
+	<section>
 
-<html lang="fr">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-		
-	</head>
+	</section>
+<BaseLayout/>
 
-	<body>
-		<BlogHeader/>
-		
-	</body>
-</html>
 
-<style>
+<style lang="scss">
 </style>
