@@ -81,7 +81,6 @@ export default defineConfig({
                 name: "biome",
                 label: "Biome",
                 widget: "relation",
-
                 collection: "biomes",
                 search_fields: ["name"],
                 value_field: "name",
@@ -107,7 +106,6 @@ export default defineConfig({
                 label: "Durée de vie",
                 required: false,
               },
-
               {
                 name: "EvolutionDescripption",
                 widget: "markdown",

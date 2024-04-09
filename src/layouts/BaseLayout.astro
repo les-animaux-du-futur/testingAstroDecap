@@ -1,4 +1,5 @@
 ---
+import MobileHeader from '../components/MobileHeader.astro';
 import SideBar from '../components/SideBar.astro';
 import { SITE } from '../config';
 import '../styles/app.css';
@@ -15,6 +16,8 @@ import '../styles/app.css';
 
     <body>
       <SideBar/>
+      <MobileHeader/>
+
         <slot/>
     </body>
 <footer>
@@ -26,16 +29,21 @@ import '../styles/app.css';
   </script>
 </html>
 
-
 <style lang="scss" is:global>
+
   html {
-    padding-left: 6rem;
+    @media (min-width: 660px){
+      padding-left: 6rem;
+    }
+    @media (max-width: 659px){
+      padding-top: 6rem;
+    }
   }
   body {
     background: #131515;
     color: #E1F6FF;
-    font-family: DMSans;
-  
+    font-family: Blinker-Regular;
+
 
     footer{
         display: flex;
@@ -52,7 +60,7 @@ import '../styles/app.css';
   }
   /*configuration du container*/
   .container{
-    margin: 50px 30px;
+    margin: 50px 30px !important;
     max-width: 800px;
     margin: 0 auto;
     @media (min-width: 1000px){
@@ -70,7 +78,7 @@ import '../styles/app.css';
     font-size: 48px;
     font-weight: 500;
     color: #E1F6FF;
-    font-family: BlackHan;
+    font-family: Blinker-Bold;
   }
   h2 {
     font-size: 35px;
@@ -79,6 +87,11 @@ import '../styles/app.css';
   }
   h3{
     font-size: 25px;
+    font-weight: 500;
+    color: #E1F6FF;
+  }
+  h4{
+    font-size: 20px;
     font-weight: 500;
     color: #E1F6FF;
   }
@@ -101,6 +114,9 @@ import '../styles/app.css';
     }
     h3{
       font-size: 28px;
+    }
+    h4{
+      font-size: 24px;
     }
     p{
       font-size: 18px;

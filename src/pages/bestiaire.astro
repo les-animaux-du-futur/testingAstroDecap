@@ -2,7 +2,6 @@
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/SideBar.astro';
-import Drawer from '../components/Drawer.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import { SITE } from '../config';
@@ -15,41 +14,100 @@ let permalink = 'https://les-animaux-du-futur.netlify.app/';
 
 const {species} = getSpecies()
 const {biomes} = getBiomes()
-
 ---
-
-<html lang="fr">
-	<head>
-		<BaseHead {title} {description} {permalink} />
 		
-	</head>
-
-	<body>
-		<BlogHeader/>
-		
-		<BaseLayout>
-			<section class="container content">
-				<h1>LE BESTIAIRE</h1>
+<BaseLayout>
+	<section class="container content">
+		<div class="header-content">
+			<h1>LE BESTIAIRE</h1>
+			<div class="research">
 				<input type="search" id="searchInput" oninput="filterSpecies()"/>
-				<!-- <Drawer data={species}/> -->
-				<div class="data-container"></div>
-			</section>
-		</BaseLayout>
-		
-	</body>
-</html>
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 44 43" fill="none">
+					<path d="M19.5977 36.7565C29.2314 36.7565 37.0411 29.0313 37.0411 19.5018C37.0411 9.97231 29.2314 2.24707 19.5977 2.24707C9.96401 2.24707 2.1543 9.97231 2.1543 19.5018C2.1543 29.0313 9.96401 36.7565 19.5977 36.7565Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+					<path d="M32.332 32.0991L41.0386 40.7116" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M25.4017 12.7449C23.9163 11.2755 21.8641 10.3667 19.5973 10.3667C17.3306 10.3667 15.2784 11.2755 13.793 12.7449" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+		</div>
+		<div class="filters">
+			<div class="content-filter">
+				<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="23" viewBox="0 0 35 32" fill="none">
+					<path d="M2 2.40137L14.4 16.0217V26.2477L20.6 29.1273V16.0217L33 2.40137H2Z" stroke="#E1F6FF" stroke-width="4" stroke-linejoin="round"/>
+				</svg>
+				<select name="filter" id="filter">
+					<option value="">Filtrer</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+			<div class="content-filter">
+				<svg class="svg-filter" xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 38 40" fill="none">
+					<path d="M32.8535 8.33301H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7715 5V11.6667" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7702 8.33301H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M10.6868 20H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M17.0215 16.667V23.3337" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M34.4382 20H17.0215" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M32.8535 31.667H28.1035" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7715 28.333V34.9997" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M21.7702 31.667H4.35352" stroke="#E1F6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				<select name="sort" id="sort">
+					<option value="">Trier</option>
+					<option value="id">Identifiant</option>
+					<option value="biome">Biome</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+			<div class="content-filter">
+				<select name="asc" id="asc">
+					<option value="asc">Ascendant</option>
+					<option value="desc">Descendant</option>
+				</select>
+				<svg class="arrow-filter" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 23 12" fill="none">
+					<path d="M21 1.99561L11.5302 9.61276L2.0001 2.04694" stroke="#E1F6FF" stroke-width="3.95214" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+		</div>
+		<div class="data-container"></div>
+	</section>
+</BaseLayout>
 
-<script is:inline define:vars={{species}}>
+<script is:inline define:vars={{biomes, species}}>
 	const dataContainer = document.querySelector('.data-container');
 	const searchInput = document.getElementById('searchInput');
-	
-	// Fonction de filtrage
-	function filterSpecies() {
+	const filterSelect = document.getElementById('filter');
+	const sortSelect = document.getElementById('sort');
+	const descSelect = document.getElementById('asc');
+
+	// Fonction de filtrage et de tri
+	function filterAndSortSpecies() {
 		const searchTerm = searchInput.value.trim().toLowerCase();
-		const filteredSpecies = species.filter(specie => specie.name.toLowerCase().includes(searchTerm));
-	
-		// Mettre à jour la grille avec les animaux filtrés
-		dataContainer.innerHTML = filteredSpecies.map(specie => {
+		const selectedBiome = filterSelect.value.toLowerCase();
+		const sortBy = sortSelect.value.toLowerCase();
+		const sortDesc = descSelect.value === 'asc';
+
+		const filteredSpecies = species.filter(specie => {
+			const matchesSearch = specie.name.toLowerCase().includes(searchTerm);
+			const matchesBiome = selectedBiome === '' || specie.biome.toLowerCase() === selectedBiome;
+			return matchesSearch && matchesBiome;
+		});
+
+		let sortedSpecies = filteredSpecies.slice();
+
+		if (sortBy === 'id' || sortBy === '') {
+			sortedSpecies.sort((a, b) => (sortDesc ? a.id.localeCompare(b.id) : b.id.localeCompare(a.id)));
+		} else if (sortBy === 'biome') {
+			sortedSpecies.sort((a, b) => (sortDesc ? a.biome.localeCompare(b.biome) : b.biome.localeCompare(a.biome)));
+		}
+
+		dataContainer.innerHTML = sortedSpecies.map(specie => {
+			const biome = biomes.find(biome => biome.name.toLowerCase() === specie.biome.toLowerCase());
+			const biomeColor = biome ? biome.color : 'black';
+			const biomeName = biome ? biome.name : '';
 			return `
 			<div class="animal">
 				<img src=${specie.speciesImage} alt=""/>
@@ -61,40 +119,122 @@ const {biomes} = getBiomes()
 						${specie.name}
 					</h4>
 				</div>
-				<div class="biome" style="background-color: ${specie.color};">
-					<h4>
-						${specie.biome}
-					</h4>
+				<div class="biome" style="background-color: ${biomeColor};">
+					<p>
+						${biomeName}
+					</p>
 				</div>
 			</div>
 			`;
 		}).join('');
 	}
-	
+
+	// Remplir la liste déroulante des filtres
+	biomes.forEach(biome => {
+		filterSelect.innerHTML += `<option value="${biome.name}">${biome.name}</option>`;
+	});
+
+	// Ajoutez des événements pour déclencher le filtrage et le tri
+	filterSelect.addEventListener('change', filterAndSortSpecies);
+	sortSelect.addEventListener('change', filterAndSortSpecies);
+	descSelect.addEventListener('change', filterAndSortSpecies);
+	searchInput.addEventListener('input', filterAndSortSpecies);
+
 	// Appel initial pour afficher tous les animaux
-	filterSpecies();
-	searchInput.addEventListener('input', filterSpecies);
+	filterAndSortSpecies();
 </script>
 
 <style lang="scss" is:global>
-.container {
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	.header-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 5rem;
-	#searchInput {
-		width: 20rem;
-		height: 3rem;
-		border-radius: 2rem;
+
+	}
+	.research {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin: 2rem 0;
+		#searchInput {
+			width: 20rem;
+			height: 2.5rem;
+			border-radius: 2rem;
+			padding: 1rem;
+			border: none;
+		}
+		svg {
+			position: absolute;
+			right: 1rem;
+			pointer-events: none;
+		}
+	}
+	.filters {
+		display: flex;
+		gap: 1.75rem;
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+			}
+		.content-filter {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: fit-content;
+			svg {
+				pointer-events :none;
+			}
+			.svg-filter {
+				position: absolute;
+				left: 1rem;
+			}
+			select {
+				width: 10rem;
+				height: 2.5rem;
+				background-color: #2D4436;
+				color: white;
+				border-radius: 25px;
+				border: none;
+				outline: none;
+				display: inline-block;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				text-indent: 30%;
+				font-size: 1rem;
+				cursor: pointer;
+			}
+			.arrow-filter {
+				position: absolute;
+				right: 1rem;
+			}
+			#asc {
+				text-indent: 1rem;
+			}
+
+		}
 	}
 	.data-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;
+		@media screen and (max-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (max-width: 450px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
         .animal {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+			img {
+				width: 100%;
+			}
             .title {
                 color: #E1F6FF;
             }
@@ -102,10 +242,12 @@ const {biomes} = getBiomes()
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 9.0625rem;
+                width: 9rem;
                 height: 1.875rem;
                 border-radius: 1.125rem;
-                color: black;
+				p {
+                	color: black;
+				}
             }
             h4 {
                 margin: 0;
