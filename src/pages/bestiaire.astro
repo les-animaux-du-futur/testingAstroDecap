@@ -118,6 +118,7 @@ const {biomes} = getBiomes()
 		dataContainer.innerHTML = sortedSpecies.map(specie => {
 			const biome = biomes.find(biome => biome.name.toLowerCase() === specie.biome.toLowerCase());
 			const biomeColor = biome ? biome.color : 'black';
+			const biomeName = biome ? biome.name : '';
 			return `
 			<div class="animal">
 				<img src=${specie.speciesImage} alt=""/>
@@ -131,7 +132,7 @@ const {biomes} = getBiomes()
 				</div>
 				<div class="biome" style="background-color: ${biomeColor};">
 					<p>
-						${specie.biome}
+						${biomeName}
 					</p>
 				</div>
 			</div>
